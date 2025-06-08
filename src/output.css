@@ -2,10 +2,13 @@
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
-  :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  :root,
+  :host {
+    --font-sans:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    --font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -30,17 +33,31 @@
   }
 }
 @layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0 solid;
   }
-  html, :host {
+  html,
+  :host {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-family: var(
+      --default-font-family,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"
+    );
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
@@ -54,7 +71,12 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: inherit;
     font-weight: inherit;
   }
@@ -63,19 +85,37 @@
     -webkit-text-decoration: inherit;
     text-decoration: inherit;
   }
-  b, strong {
+  b,
+  strong {
     font-weight: bolder;
   }
-  code, kbd, samp, pre {
-    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(
+      --default-mono-font-family,
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      "Liberation Mono",
+      "Courier New",
+      monospace
+    );
     font-feature-settings: var(--default-mono-font-feature-settings, normal);
-    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-variation-settings: var(
+      --default-mono-font-variation-settings,
+      normal
+    );
     font-size: 1em;
   }
   small {
     font-size: 80%;
   }
-  sub, sup {
+  sub,
+  sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -101,18 +141,33 @@
   summary {
     display: list-item;
   }
-  ol, ul, menu {
+  ol,
+  ul,
+  menu {
     list-style: none;
   }
-  img, svg, video, canvas, audio, iframe, embed, object {
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
     display: block;
     vertical-align: middle;
   }
-  img, video {
+  img,
+  video {
     max-width: 100%;
     height: auto;
   }
-  button, input, select, optgroup, textarea, ::file-selector-button {
+  button,
+  input,
+  select,
+  optgroup,
+  textarea,
+  ::file-selector-button {
     font: inherit;
     font-feature-settings: inherit;
     font-variation-settings: inherit;
@@ -134,7 +189,8 @@
   ::placeholder {
     opacity: 1;
   }
-  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+  @supports (not (-webkit-appearance: -apple-pay-button)) or
+    (contain-intrinsic-size: 1px) {
     ::placeholder {
       color: currentcolor;
       @supports (color: color-mix(in lab, red, red)) {
@@ -158,16 +214,27 @@
   ::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
   }
-  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+  ::-webkit-datetime-edit,
+  ::-webkit-datetime-edit-year-field,
+  ::-webkit-datetime-edit-month-field,
+  ::-webkit-datetime-edit-day-field,
+  ::-webkit-datetime-edit-hour-field,
+  ::-webkit-datetime-edit-minute-field,
+  ::-webkit-datetime-edit-second-field,
+  ::-webkit-datetime-edit-millisecond-field,
+  ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
   :-moz-ui-invalid {
     box-shadow: none;
   }
-  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+  button,
+  input:where([type="button"], [type="reset"], [type="submit"]),
+  ::file-selector-button {
     appearance: button;
   }
-  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
     height: auto;
   }
   [hidden]:where(:not([hidden="until-found"])) {
@@ -198,7 +265,8 @@
         scale: 95%;
       }
     }
-    &[popover], .dropdown-content {
+    &[popover],
+    .dropdown-content {
       z-index: 999;
       animation: dropdown 0.2s;
       transition-property: opacity, scale, display;
@@ -207,12 +275,15 @@
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     @starting-style {
-      &[popover], .dropdown-content {
+      &[popover],
+      .dropdown-content {
         scale: 95%;
         opacity: 0;
       }
     }
-    &.dropdown-open, &:not(.dropdown-hover):focus, &:focus-within {
+    &.dropdown-open,
+    &:not(.dropdown-hover):focus,
+    &:focus-within {
       > [tabindex]:first-child {
         pointer-events: none;
       }
@@ -233,7 +304,9 @@
         }
       }
     }
-    &.dropdown-open, &:focus, &:focus-within {
+    &.dropdown-open,
+    &:focus,
+    &:focus-within {
       .dropdown-content {
         scale: 100%;
       }
@@ -302,20 +375,28 @@
     border-color: var(--btn-border);
     text-shadow: 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 0.15));
     touch-action: manipulation;
-    box-shadow: 0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
+    box-shadow:
+      0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset,
+      var(--btn-shadow);
     --size: calc(var(--size-field, 0.25rem) * 10);
     --btn-bg: var(--btn-color, var(--color-base-200));
     --btn-fg: var(--color-base-content);
     --btn-p: 1rem;
     --btn-border: var(--btn-bg);
     @supports (color: color-mix(in lab, red, red)) {
-      --btn-border: color-mix(in oklab, var(--btn-bg), #000 calc(var(--depth) * 5%));
+      --btn-border: color-mix(
+        in oklab,
+        var(--btn-bg),
+        #000 calc(var(--depth) * 5%)
+      );
     }
-    --btn-shadow: 0 3px 2px -2px var(--btn-bg),
-    0 4px 3px -2px var(--btn-bg);
+    --btn-shadow: 0 3px 2px -2px var(--btn-bg), 0 4px 3px -2px var(--btn-bg);
     @supports (color: color-mix(in lab, red, red)) {
-      --btn-shadow: 0 3px 2px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000),
-    0 4px 3px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000);
+      --btn-shadow:
+        0 3px 2px -2px
+          color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000),
+        0 4px 3px -2px
+          color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000);
     }
     --btn-noise: var(--fx-noise);
     .prose & {
@@ -325,7 +406,11 @@
       &:hover {
         --btn-bg: var(--btn-color, var(--color-base-200));
         @supports (color: color-mix(in lab, red, red)) {
-          --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+          --btn-bg: color-mix(
+            in oklab,
+            var(--btn-color, var(--color-base-200)),
+            #000 7%
+          );
         }
       }
     }
@@ -338,11 +423,19 @@
       translate: 0 0.5px;
       --btn-bg: var(--btn-color, var(--color-base-200));
       @supports (color: color-mix(in lab, red, red)) {
-        --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 5%);
+        --btn-bg: color-mix(
+          in oklab,
+          var(--btn-color, var(--color-base-200)),
+          #000 5%
+        );
       }
       --btn-border: var(--btn-color, var(--color-base-200));
       @supports (color: color-mix(in lab, red, red)) {
-        --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+        --btn-border: color-mix(
+          in oklab,
+          var(--btn-color, var(--color-base-200)),
+          #000 7%
+        );
       }
       --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
     }
@@ -350,7 +443,11 @@
       &:not(.btn-link, .btn-ghost) {
         background-color: var(--color-base-content);
         @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+          background-color: color-mix(
+            in oklab,
+            var(--color-base-content) 10%,
+            transparent
+          );
         }
         box-shadow: none;
       }
@@ -366,7 +463,11 @@
           pointer-events: none;
           background-color: var(--color-neutral);
           @supports (color: color-mix(in lab, red, red)) {
-            background-color: color-mix(in oklab, var(--color-neutral) 20%, transparent);
+            background-color: color-mix(
+              in oklab,
+              var(--color-neutral) 20%,
+              transparent
+            );
           }
           --btn-border: #0000;
           --btn-fg: var(--color-base-content);
@@ -422,9 +523,19 @@
     border-end-start-radius: var(--join-es, var(--radius-field));
     border-end-end-radius: var(--join-ee, var(--radius-field));
     border-color: var(--input-color);
-    box-shadow: 0 1px var(--input-color) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
+    box-shadow:
+      0 1px var(--input-color) inset,
+      0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
     @supports (color: color-mix(in lab, red, red)) {
-      box-shadow: 0 1px color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
+      box-shadow:
+        0 1px
+          color-mix(
+            in oklab,
+            var(--input-color) calc(var(--depth) * 10%),
+            #0000
+          )
+          inset,
+        0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
     }
     --size: calc(var(--size-field, 0.25rem) * 10);
     --input-color: var(--color-base-content);
@@ -441,7 +552,8 @@
       appearance: none;
       background-color: transparent;
       border: none;
-      &:focus, &:focus-within {
+      &:focus,
+      &:focus-within {
         --tw-outline-style: none;
         outline-style: none;
         @media (forced-colors: active) {
@@ -450,24 +562,32 @@
         }
       }
     }
-    :where(input[type="url"]), :where(input[type="email"]) {
+    :where(input[type="url"]),
+    :where(input[type="email"]) {
       direction: ltr;
     }
     :where(input[type="date"]) {
       display: inline-block;
     }
-    &:focus, &:focus-within {
+    &:focus,
+    &:focus-within {
       --input-color: var(--color-base-content);
       box-shadow: 0 1px var(--input-color);
       @supports (color: color-mix(in lab, red, red)) {
-        box-shadow: 0 1px color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000);
+        box-shadow: 0 1px
+          color-mix(
+            in oklab,
+            var(--input-color) calc(var(--depth) * 10%),
+            #0000
+          );
       }
       outline: 2px solid var(--input-color);
       outline-offset: 2px;
       isolation: isolate;
       z-index: 1;
     }
-    &:has(> input[disabled]), &:is(:disabled, [disabled]) {
+    &:has(> input[disabled]),
+    &:is(:disabled, [disabled]) {
       cursor: not-allowed;
       border-color: var(--color-base-200);
       background-color: var(--color-base-200);
@@ -478,7 +598,11 @@
       &::placeholder {
         color: var(--color-base-content);
         @supports (color: color-mix(in lab, red, red)) {
-          color: color-mix(in oklab, var(--color-base-content) 20%, transparent);
+          color: color-mix(
+            in oklab,
+            var(--color-base-content) 20%,
+            transparent
+          );
         }
       }
       box-shadow: none;
@@ -519,7 +643,9 @@
       transition-duration: 0.2s;
       transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
-    .swap-on, .swap-indeterminate, input:indeterminate ~ .swap-on {
+    .swap-on,
+    .swap-indeterminate,
+    input:indeterminate ~ .swap-on {
       opacity: 0%;
     }
     input:is(:checked, :indeterminate) {
@@ -527,7 +653,8 @@
         opacity: 0%;
       }
     }
-    input:checked ~ .swap-on, input:indeterminate ~ .swap-indeterminate {
+    input:checked ~ .swap-on,
+    input:indeterminate ~ .swap-indeterminate {
       opacity: 100%;
       backface-visibility: visible;
     }
@@ -535,7 +662,11 @@
   .checkbox {
     border: var(--border) solid var(--input-color, var(--color-base-content));
     @supports (color: color-mix(in lab, red, red)) {
-      border: var(--border) solid var(--input-color, color-mix(in oklab, var(--color-base-content) 20%, #0000));
+      border: var(--border) solid
+        var(
+          --input-color,
+          color-mix(in oklab, var(--color-base-content) 20%, #0000)
+        );
     }
     position: relative;
     display: inline-block;
@@ -546,8 +677,13 @@
     padding: calc(0.25rem * 1);
     vertical-align: middle;
     color: var(--color-base-content);
-    box-shadow: 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset, 0 0 #0000 inset, 0 0 #0000;
-    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow:
+      0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset,
+      0 0 #0000 inset,
+      0 0 #0000;
+    transition:
+      background-color 0.2s,
+      box-shadow 0.2s;
     --size: calc(var(--size-selector, 0.25rem) * 6);
     width: var(--size);
     height: var(--size);
@@ -562,9 +698,20 @@
       rotate: 45deg;
       background-color: currentColor;
       opacity: 0%;
-      transition: clip-path 0.3s, opacity 0.1s, rotate 0.3s, translate 0.3s;
+      transition:
+        clip-path 0.3s,
+        opacity 0.1s,
+        rotate 0.3s,
+        translate 0.3s;
       transition-delay: 0.1s;
-      clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 70% 80%, 70% 100%);
+      clip-path: polygon(
+        20% 100%,
+        20% 80%,
+        50% 80%,
+        50% 80%,
+        70% 80%,
+        70% 100%
+      );
       box-shadow: 0px 3px 0 0px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
       font-size: 1rem;
       line-height: 0.75;
@@ -573,11 +720,22 @@
       outline: 2px solid var(--input-color, currentColor);
       outline-offset: 2px;
     }
-    &:checked, &[aria-checked="true"] {
+    &:checked,
+    &[aria-checked="true"] {
       background-color: var(--input-color, #0000);
-      box-shadow: 0 0 #0000 inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
+      box-shadow:
+        0 0 #0000 inset,
+        0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
       &:before {
-        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 0%, 70% 0%, 70% 100%);
+        clip-path: polygon(
+          20% 100%,
+          20% 80%,
+          50% 80%,
+          50% 0%,
+          70% 0%,
+          70% 100%
+        );
         opacity: 100%;
       }
       @media (forced-colors: active) {
@@ -602,7 +760,14 @@
         rotate: 0deg;
         opacity: 100%;
         translate: 0 -35%;
-        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 80% 80%, 80% 100%);
+        clip-path: polygon(
+          20% 100%,
+          20% 80%,
+          50% 80%,
+          50% 80%,
+          80% 80%,
+          80% 100%
+        );
       }
     }
     &:disabled {
@@ -637,7 +802,10 @@
       background-image: none;
     }
     * {
-      &:checked, &[aria-checked="true"], &[aria-current="true"], &:has(~ *:checked, ~ *[aria-checked="true"], ~ *[aria-current="true"]) {
+      &:checked,
+      &[aria-checked="true"],
+      &[aria-current="true"],
+      &:has(~ *:checked, ~ *[aria-checked="true"], ~ *[aria-current="true"]) {
         opacity: 100%;
       }
       &:focus-visible {
@@ -751,7 +919,11 @@
     border-radius: var(--radius-selector);
     background-color: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-content) 20%, transparent);
+      background-color: color-mix(
+        in oklab,
+        var(--color-base-content) 20%,
+        transparent
+      );
     }
     background-position: center;
     background-repeat: no-repeat;
@@ -763,10 +935,15 @@
         color: color-mix(in oklab, var(--color-black) 30%, transparent);
       }
     }
-    background-image: radial-gradient( circle at 35% 30%, oklch(1 0 0 / calc(var(--depth) * 0.5)), #0000 );
+    background-image: radial-gradient(
+      circle at 35% 30%,
+      oklch(1 0 0 / calc(var(--depth) * 0.5)),
+      #0000
+    );
     box-shadow: 0 2px 3px -1px currentColor;
     @supports (color: color-mix(in lab, red, red)) {
-      box-shadow: 0 2px 3px -1px color-mix(in oklab, currentColor calc(var(--depth) * 100%), #0000);
+      box-shadow: 0 2px 3px -1px
+        color-mix(in oklab, currentColor calc(var(--depth) * 100%), #0000);
     }
   }
   .navbar {
@@ -899,13 +1076,16 @@
     flex: 1;
   }
   .swap-rotate {
-    .swap-on, input:indeterminate ~ .swap-on {
+    .swap-on,
+    input:indeterminate ~ .swap-on {
       rotate: 45deg;
     }
-    input:is(:checked, :indeterminate) ~ .swap-on, &.swap-active .swap-on {
+    input:is(:checked, :indeterminate) ~ .swap-on,
+    &.swap-active .swap-on {
       rotate: 0deg;
     }
-    input:is(:checked, :indeterminate) ~ .swap-off, &.swap-active .swap-off {
+    input:is(:checked, :indeterminate) ~ .swap-off,
+    &.swap-active .swap-off {
       rotate: calc(45deg * -1);
     }
   }
@@ -1016,11 +1196,17 @@
   }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-sm {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    --tw-shadow:
+      0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+      0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .btn-ghost {
     &:not(.btn-active, :hover, :active:focus, :focus-visible) {
@@ -1034,7 +1220,14 @@
       }
     }
     @media (hover: none) {
-      &:hover:not(.btn-active, :active, :focus-visible, :disabled, [disabled], .btn-disabled) {
+      &:hover:not(
+          .btn-active,
+          :active,
+          :focus-visible,
+          :disabled,
+          [disabled],
+          .btn-disabled
+        ) {
         --btn-shadow: "";
         --btn-bg: #0000;
         --btn-border: #0000;
@@ -1083,7 +1276,9 @@
   display: none !important;
 }
 @layer base {
-  :where(:root),:root:has(input.theme-controller[value=cupcake]:checked),[data-theme=cupcake] {
+  :where(:root),
+  :root:has(input.theme-controller[value="cupcake"]:checked),
+  [data-theme="cupcake"] {
     color-scheme: light;
     --color-base-100: oklch(97.788% 0.004 56.375);
     --color-base-200: oklch(93.982% 0.007 61.449);
@@ -1151,7 +1346,8 @@
   }
 }
 @layer base {
-  :root:has(input.theme-controller[value=cupcake]:checked),[data-theme=cupcake] {
+  :root:has(input.theme-controller[value="cupcake"]:checked),
+  [data-theme="cupcake"] {
     color-scheme: light;
     --color-base-100: oklch(97.788% 0.004 56.375);
     --color-base-200: oklch(93.982% 0.007 61.449);
@@ -1184,7 +1380,8 @@
   }
 }
 @layer base {
-  :root:has(input.theme-controller[value=sunset]:checked),[data-theme=sunset] {
+  :root:has(input.theme-controller[value="sunset"]:checked),
+  [data-theme="sunset"] {
     color-scheme: dark;
     --color-base-100: oklch(22% 0.019 237.69);
     --color-base-200: oklch(20% 0.019 237.69);
@@ -1237,25 +1434,46 @@
   }
 }
 @layer base {
-  :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not([class*="drawer-open"]) > .drawer-toggle:checked ) {
+  :root:has(
+      .modal-open,
+      .modal[open],
+      .modal:target,
+      .modal-toggle:checked,
+      .drawer:not([class*="drawer-open"]) > .drawer-toggle:checked
+    ) {
     overflow: hidden;
   }
 }
 @layer base {
-  :where( :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(.drawer-open) > .drawer-toggle:checked ) ) {
+  :where(
+    :root:has(
+        .modal-open,
+        .modal[open],
+        .modal:target,
+        .modal-toggle:checked,
+        .drawer:not(.drawer-open) > .drawer-toggle:checked
+      )
+  ) {
     scrollbar-gutter: stable;
-    background-image: linear-gradient(var(--color-base-100), var(--color-base-100));
+    background-image: linear-gradient(
+      var(--color-base-100),
+      var(--color-base-100)
+    );
     --root-bg: var(--color-base-100);
     @supports (color: color-mix(in lab, red, red)) {
       --root-bg: color-mix(in srgb, var(--color-base-100), oklch(0% 0 0) 40%);
     }
   }
-  :where(.modal[open], .modal-open, .modal-toggle:checked + .modal):not(.modal-start, .modal-end) {
+  :where(.modal[open], .modal-open, .modal-toggle:checked + .modal):not(
+      .modal-start,
+      .modal-end
+    ) {
     scrollbar-gutter: stable;
   }
 }
 @layer base {
-  :root, [data-theme] {
+  :root,
+  [data-theme] {
     background-color: var(--root-bg, var(--color-base-100));
     color: var(--color-base-content);
   }
@@ -1297,7 +1515,8 @@
   }
 }
 @keyframes rating {
-  0%, 40% {
+  0%,
+  40% {
     scale: 1.1;
     filter: brightness(1.05) contrast(1.05);
   }
@@ -1372,8 +1591,12 @@
   initial-value: 0 0 #0000;
 }
 @layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *,
+    ::before,
+    ::after,
+    ::backdrop {
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;

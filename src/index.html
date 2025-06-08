@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VitAP Faculty Directory</title>
     <link rel="stylesheet" href="output.css" />
-    <script src="https://cdn.jsdelivr.net/npm/react-render-tracker"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"
@@ -118,12 +117,13 @@
                   </div>
                 </div>
                 <div
-                  class="whitespace-nowrap flex flex-col w-full items-center p-2 mt-auto"
+                  class="whitespace-nowrap grid grid-cols-3 w-full items-center p-2 mt-auto"
                 >
                   <div class="flex w-full justify-center gap-10">
                     <p>
                       Attendance :
                       <span
+                        class="font-bold"
                         :class="rate(value.attendance_rating, value.num_attendance_ratings) >= 3.5 
   ? 'text-success' 
   : (rate(value.attendance_rating, value.num_attendance_ratings) >= 2.5 
@@ -132,7 +132,7 @@
                         x-text="rate(value.attendance_rating,value.num_attendance_ratings)"
                       ></span>
                     </p>
-                    <p class="flex items-center gap-1 text-sm">
+                    <p>
                       <span x-text="value.num_attendance_ratings"></span>
                       <svg
                         class="w-4 h-4 inline-block"
@@ -162,6 +162,7 @@
                     <p>
                       Correction&nbsp;&nbsp;:
                       <span
+                        class="font-bold"
                         :class="rate(value.correction_rating, value.num_correction_ratings) >= 3.5 
   ? 'text-success' 
   : (rate(value.correction_rating, value.num_correction_ratings) >= 2.5 
@@ -200,6 +201,7 @@
                     <p>
                       Teaching&nbsp;&nbsp;&nbsp;&nbsp;:
                       <span
+                        class="font-bold"
                         x-text="rate(value.teaching_rating,value.num_teaching_ratings)"
                         :class="rate(value.teaching_rating, value.num_teaching_ratings) >= 3.5 
   ? 'text-success' 
