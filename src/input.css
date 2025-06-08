@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes:
+    cupcake --default,
+    sunset --prefersdark;
+}
+@plugin "@tailwindcss/typography";
+[x-cloak] {
+  display: none !important;
+}
