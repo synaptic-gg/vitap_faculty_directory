@@ -304,7 +304,8 @@
 
           async search(newQuery = true) {
             this.loading = true;
-            const res = await index.search(this.query, {
+
+            const res = await index.search(cleanQuery(this.query), {
               limit: this.perPage,
               offset: this.offset,
             });
@@ -356,6 +357,15 @@
           },
         };
       }
+      function cleanQuery(query) {
+  return query
+    .toLowerCase()
+    .trim()
+    .replace(/\b(dr|prof|mr|mrs|ms|mx|phd|md|dds|do|esq|jr|sr)\b/g, "")
+    .replace(/[.,]/g, "")  
+    .replace(/\s+/g, " ")  
+    .trim();
+}
     </script>
   </body>
 </html>
